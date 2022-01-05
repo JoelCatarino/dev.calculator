@@ -8,7 +8,10 @@ server.set('view engine', 'ejs')
 // habilitar arquivos statics
 server.use(express.static("public"))
 
+// funcionamento do req.body
+server.use(express.urlencoded({ extended: true }))
+
 server.use(routes)
 
 // routes
-server.listen(3000, () => console.log('running'))
+server.listen(3000)
