@@ -4,9 +4,9 @@ const Profile = require("../model/Profile");
 // const JobController = require("../controllers/JobController")
 
 module.exports = {
-  index(req, res) {
+  async index(req, res) {
     const jobs = Job.get();
-    const profile = Profile.get();
+    const profile = await Profile.get();
 
     let statusCount = {
       progress: 0,
@@ -23,10 +23,6 @@ module.exports = {
       statusCount[status] += 1;
 
       jobTotalHours = status == "progress" ? jobTotalHours + Number(job["daily-hours"]) : jobTotalHours
-
-      // if (status == "progress") {
-      //   jobTotalHours += Number(job["daily-hours"])
-      // }
 
       return {
         ...job,
