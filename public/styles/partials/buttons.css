@@ -48,6 +48,9 @@ button.button {
 .button.gray:hover {
   background: #ECEEF0;
 }
+.button.alternativo:hover {
+  background: #f6f4d2;
+}
 
 .button.red {
   background: var(--color-delete);
@@ -68,6 +71,7 @@ button.button {
 }
 
 .button-group {
+  justify-content: center;
   display: flex;
   align-items: center;
 }
